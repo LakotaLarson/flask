@@ -15,7 +15,7 @@ def loan():
         n = int(form['Years'])*12
         i = float(form['Interest_Rate'])/12
         D = (((1+i)**n)-1)/(i*(1+i)**n)
-        Payment =  A/D
+        Payment = "$" + str((round(A/D,2)))
         return render_template('index.html', display=Payment, pageTitle='Loan Calculator')
 
     return redirect("/")
